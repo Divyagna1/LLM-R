@@ -1,0 +1,14 @@
+<graphml>
+  <graph edgedefault="undirected">
+    <node id="Nathalie"/>
+    <node id="Gabriel"/>
+    <node id="Baird"/>
+    <node id="Quinlan"/>
+    <node id="John"/>
+    <node id="Arthur"/>
+    <node id="Collier"/>
+    <edge source="Nathalie" target="Gabriel"/>
+    <edge source="Baird" target="John"/>
+    <edge source="Quinlan" target="Gabriel"/>
+  </graph>
+</graphml>

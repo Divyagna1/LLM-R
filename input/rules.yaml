@@ -1,0 +1,69 @@
+rules:
+  - rule: "If there exists someone who is (not concerned OR fresh), then John is entire."
+    head: "John: entire"
+    body:
+      - "(X: not concerned) OR (X: fresh)"
+
+  - rule: "If someone is (not fresh OR entire), then they are not serious."
+    head: "X: not serious"
+    body:
+      - "(X: not fresh) OR (X: entire)"
+
+  - rule: "If John is not serious AND Quinlan is fresh, then Baird is not entire."
+    head: "Baird: not entire"
+    body:
+      - "John: not serious"
+      - "Quinlan: fresh"
+
+  - rule: "If Gabriel is not serious, then Quinlan is not blue AND Gabriel is accurate."
+    head:
+      - "Quinlan: not blue"
+      - "Gabriel: accurate"
+    body:
+      - "Gabriel: not serious"
+
+  - rule: "If Nathalie is not blue, then Collier is entire."
+    head: "Collier: entire"
+    body:
+      - "Nathalie: not blue"
+
+  - rule: "If someone is (fresh OR not concerned), then they are not blue."
+    head: "X: not blue"
+    body:
+      - "(X: fresh) OR (X: not concerned)"
+
+  - rule: "If there exists someone who is both serious AND fresh, then Baird is not blue."
+    head: "Baird: not blue"
+    body:
+      - "(X: serious) AND (X: fresh)"
+
+  - rule: "If someone is concerned AND serious, then they are entire (and vice versa)."
+    bidirectional: true
+    pairs:
+      - head: "X: entire"
+        body:
+          - "X: concerned"
+          - "X: serious"
+
+  - rule: "If Nathalie is not fresh AND Baird is serious, then Nathalie is blue."
+    head: "Nathalie: blue"
+    body:
+      - "Nathalie: not fresh"
+      - "Baird: serious"
+
+  - rule: "If there exists at least one person who is (not accurate AND entire), then Collier is serious."
+    head: "Collier: serious"
+    body:
+      - "(X: not accurate) AND (X: entire)"
+
+  - rule: "If we know Baird is not blue, then Gabriel is concerned."
+    head: "Gabriel: concerned"
+    body:
+      - "Baird: not blue"
+
+  - rule: "If someone is entire, then they are not serious (and vice versa)."
+    bidirectional: true
+    pairs:
+      - head: "X: not serious"
+        body:
+          - "X: entire"
